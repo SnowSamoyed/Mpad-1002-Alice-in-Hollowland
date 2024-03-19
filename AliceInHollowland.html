@@ -20,33 +20,47 @@ CITATIONS
 
 <!-- Tested on laptop screens -->
   <body id="body">
+    <header>
+
+    </header>
+
+
+
+
+    <section class="scroll-bar">
+      <div id="progressbar"></div>
+      <div id="scrollPath"></div>
+    </section>
+
     <section id="hero">
       <img src="\images\moon.png" id="moon">
-      <h1 id="title">Alice in Hollowland</h1>  
+      <div class="title-container"><h1 id="title">Alice in Hollowland</h1></div>
     </section>
     <main>
       <!-- PRPLOGUE -------------------------------------------- -->
       <section id="prologue">
-
+        <h2>Prologue</h2>
         <div id="video-container">
           <video controls width="250" id="prologue-video">
             <source src="/media/cc0-videos/flower.webm" type="video/webm" />
         </div>
 
-        <div id="panel-container">
-          <img src="https://picsum.photos/300/200?nocache=<?php echo microtime(); ?>" id="prologue-p1">
+        <div><p id="novel-text">In this div, it will display the novel text as the user hover their mouse on the panels</p></div>
 
-          <img src="https://picsum.photos/300/200?nocache=<?php echo microtime(); ?>" id="prologue-p2">
+        <ul id="panel-container">
+          <li><img src="https://picsum.photos/300/200?nocache=<?php echo microtime(); ?>" id="prologue-p1"></li>
 
-          <img src="https://picsum.photos/300/200?nocache=<?php echo microtime(); ?>"  id="prologue-p3">
+          <li><img src="https://picsum.photos/300/200?nocache=<?php echo microtime(); ?>" id="prologue-p2"></li>
 
-          <img src="https://picsum.photos/300/200?nocache=<?php echo microtime(); ?>"  id="prologue-p4">
+          <li><img src="https://picsum.photos/300/200?nocache=<?php echo microtime(); ?>"  id="prologue-p3"></li>
 
-          <img src="https://picsum.photos/300/200?nocache=<?php echo microtime(); ?>"  id="prologue-p5">
+          <li><img src="https://picsum.photos/300/200?nocache=<?php echo microtime(); ?>"  id="prologue-p4"></li>
 
-          <img src="https://picsum.photos/300/200?nocache=<?php echo microtime(); ?>"  id="prologue-p6">
+          <li><img src="https://picsum.photos/300/200?nocache=<?php echo microtime(); ?>"  id="prologue-p5"></li>
 
-        </div>
+          <li><img src="https://picsum.photos/300/200?nocache=<?php echo microtime(); ?>"  id="prologue-p6"></li>
+
+        </ul>
 
       </section>
 
@@ -75,6 +89,10 @@ CITATIONS
         
       </section>
 
+
+      <footer>
+        
+      </footer>
 
     </main>
   <script src="./AliceInHollowland.js"></script>

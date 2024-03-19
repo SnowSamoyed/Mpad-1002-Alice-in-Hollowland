@@ -1,25 +1,114 @@
+/* The scroll bar -------------------------------------------------------- */
+html, body {
+    margin: 0; 
+    height: 100%; 
+    /* overflow: hidden; */
+    background-color: black;
+    color: white;
+}
 
+::-webkit-scrollbar{
+    width: 0;
+}
 
+#scrollPath{
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0.5rem;
+    height: 100%;
+    background: rgba(255,255,255,0.05);
+}
+
+#progressbar {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 0.5rem;
+    /* height: 100%; */
+    background: linear-gradient(to bottom, #000000,#ff0000);
+    /* animation: animate 5s linear; */
+}
+
+@keyframes animate{
+    0%,100%{
+        filter: hue-rotate(0deg);
+    }
+    50%{
+        filter: hue-rotate(360deg);
+    }
+}
+
+#progressbar:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(to top, #008aff,#00ffe7 ); */
+
+    fill: blur(10px);
+}
+
+#progressbar:after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    width: 100%;
+    height: 100%;
+    /* background: linear-gradient(to top, #008aff,#00ffe7 ); */
+
+    fill: blur(30px);
+}
+
+/* The hero section, the moon --------------------------------------- */
 .hero-container{
 
 }
 
 #moon {
-    width: 80%;
+    width: 50%;
     display:flex;
     flex-direction: column;
     align-items:center;
     justify-items: center;
     margin: 0 auto;
+    
     /* filter: brightness(0%); */
+    transition: transform 0.2s;
 }
 
 #moon:hover {
-    transition: transform 1s;
+    transition: transform 0.2s;
     transform: scale(1.02);
 }
 
-#title {
+@font-face {
+    font-family: "MoriaCitadel";
+    src:
+      local("fonts/moria-citadel"),
+      url("MoriaCitadel.TTF") format("TTF");
+  }
+
+/* The h1 title */
+.title-container {
+    margin: 0 0 10rem 0;
+    position: relative;
+    width: 100%;
+    /* background-color: #aaa; */
+    height: 15rem;
+    opacity: 1;
+    text-align: center;
+    font-family: 'helvetica';
+    font-size: 80px;
+    font-weight: 100;
+  }
+
+#title, h2 {
     opacity: 0%;
     display:flex;
     flex-direction: column;
@@ -28,22 +117,34 @@
     /* animation: fadeIn 5s; */
 
     font-size: 5rem;
+    font-family: "MoriaCitadel";
+    color: white;
 }
+
+p {
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-items: center;
+    color: white;
+}
+
 
 @keyframes fadeIn {
     0% { opacity: 0; }
     100% { opacity: 1; }
   }
 
-main {
+/* main {
     width:100%;
     display:flex;
     flex-direction: column;
     align-items:center;
     justify-items: center;
     margin: 0 auto;
-}
+} */
 
+/* The video player for the cut scences */
 #video-container {
     display:flex;
     flex-direction: column;
@@ -52,7 +153,11 @@ main {
     width: 100%;
 
     margin: 0rem 0rem 3rem 0rem;
-  }
+}
+
+#video-container video{
+    width: 100%;
+}
 
 /* #prologue-video{
     position: absolute;
@@ -79,7 +184,13 @@ main {
     max-width: 23vw;
   } */
 
+/* The novel texts --------------------------------------------------------*/
+#novel-text {
+    margin: 1rem 1rem 5rem 1rem;
+}
 
+
+/* The panels ------------------------------------------------------------ */
 #panel-container {
     display: grid;
     justify-items: center;
@@ -90,6 +201,19 @@ main {
     grid-row-gap: 3rem;
 
     margin: 0rem 2rem 3rem 2rem;
+    padding: 0 0 0 0;
+    list-style: none;
+    
+    transition: transform 2s;
+}
+
+#panel-container li{
+    transition: transform 2s;
+}
+
+#panel-container li:hover{
+    transform: scale(1.5);
+    transition: transform 0.2s;
 }
 
 #prologue-p1 { grid-area: 1 / 1 / 2 / 2; }
