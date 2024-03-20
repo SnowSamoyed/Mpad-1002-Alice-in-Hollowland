@@ -26,7 +26,7 @@ html, body {
     right: 0;
     width: 0.5rem;
     /* height: 100%; */
-    background: linear-gradient(to bottom, #000000,#ff0000);
+    background: linear-gradient(to bottom, #ff000000,#931414);
     /* animation: animate 5s linear; */
 }
 
@@ -65,7 +65,7 @@ html, body {
     fill: blur(30px);
 }
 
-/* The hero section, the moon --------------------------------------- */
+/* The hero section, the moon ------------------------------------------- */
 .hero-container{
 
 }
@@ -103,7 +103,7 @@ html, body {
     height: 15rem;
     opacity: 1;
     text-align: center;
-    font-family: 'helvetica';
+    font-family: 'MoriaCitadel';
     font-size: 80px;
     font-weight: 100;
   }
@@ -122,11 +122,7 @@ html, body {
 }
 
 p {
-    display:flex;
-    flex-direction: column;
-    align-items:center;
-    justify-items: center;
-    color: white;
+    
 }
 
 
@@ -186,6 +182,12 @@ p {
 
 /* The novel texts --------------------------------------------------------*/
 #novel-text {
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-items: center;
+    color: white;
+
     margin: 1rem 1rem 5rem 1rem;
 }
 
@@ -223,4 +225,43 @@ p {
 #prologue-p5 { grid-area: 2 / 2 / 3 / 3; }
 #prologue-p6 { grid-area: 2 / 3 / 3 / 4; }
 
-  
+/* The footer -------------------------------------------------------------------------- */
+/* Footer settings----- */
+#footer-settings{
+    background: #797676;
+
+    display: inline-flex;
+    gap: 2rem;
+    margin: 3rem 3rem 3rem 3rem;
+    padding: 1rem 1rem 1rem 1rem;
+
+    font-size: 0.9rem;
+}
+
+.footer-icon {
+    display: flex;
+    flex-direction: column;
+    width: 3rem;
+    justify-items: center;
+    align-items: center;
+    /* padding: 1rem 1rem 0rem 1rem; */
+
+    transition: transform 0.2s;
+}
+
+#sound-icon:hover,#autoscroll-icon:hover,#fullscreen-icon:hover{
+    transition: transform 0.2s;
+    transform: scale(1.1);
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    /* filter: drop-shadow(5px 5px 5px #222); */
+}
+
+/* .footer-icon:hover {
+    box-shadow: 5px 10px;
+} */
+
+/* Footer tradermarks----- */
+#trade-marks{
+    margin: 3rem 3rem 1rem 3rem;
+    padding: 0 0 1rem 0rem;
+}

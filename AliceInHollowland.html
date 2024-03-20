@@ -18,13 +18,13 @@
 CITATIONS
 -->
 
+<!-- @ represent something to work on next time -->
+
 <!-- Tested on laptop screens -->
   <body id="body">
     <header>
 
     </header>
-
-
 
 
     <section class="scroll-bar">
@@ -48,17 +48,17 @@ CITATIONS
         <div><p id="novel-text">In this div, it will display the novel text as the user hover their mouse on the panels</p></div>
 
         <ul id="panel-container">
-          <li><img src="https://picsum.photos/300/200?nocache=<?php echo microtime(); ?>" id="prologue-p1"></li>
+          <li><img src="https://picsum.photos/250/225?nocache=<?php echo microtime(); ?>" id="prologue-p1"></li>
 
-          <li><img src="https://picsum.photos/300/200?nocache=<?php echo microtime(); ?>" id="prologue-p2"></li>
+          <li><img src="https://picsum.photos/250/225?nocache=<?php echo microtime(); ?>" id="prologue-p2"></li>
 
-          <li><img src="https://picsum.photos/300/200?nocache=<?php echo microtime(); ?>"  id="prologue-p3"></li>
+          <li><img src="https://picsum.photos/250/225?nocache=<?php echo microtime(); ?>"  id="prologue-p3"></li>
 
-          <li><img src="https://picsum.photos/300/200?nocache=<?php echo microtime(); ?>"  id="prologue-p4"></li>
+          <li><img src="https://picsum.photos/250/225?nocache=<?php echo microtime(); ?>"  id="prologue-p4"></li>
 
-          <li><img src="https://picsum.photos/300/200?nocache=<?php echo microtime(); ?>"  id="prologue-p5"></li>
+          <li><img src="https://picsum.photos/250/225?nocache=<?php echo microtime(); ?>"  id="prologue-p5"></li>
 
-          <li><img src="https://picsum.photos/300/200?nocache=<?php echo microtime(); ?>"  id="prologue-p6"></li>
+          <li><img src="https://picsum.photos/250/225?nocache=<?php echo microtime(); ?>"  id="prologue-p6"></li>
 
         </ul>
 
@@ -89,9 +89,31 @@ CITATIONS
         
       </section>
 
-
+      <!-- @This need to be always on the page no matter where does it scroll -->
       <footer>
-        
+        <p>"always stay on page?"</p>
+        <div id="footer-settings"> <!-- @These doesn't do anything  -->
+          <span id="sound" class="footer-icon">
+            <img src="/icons/sound.png" id="sound-icon">
+            <label id="sound-label" for="sound">Sound</label>
+          </span>
+          
+          <span id="autoscroll" class="footer-icon">
+            <img src="/icons/autoscroll.png" id="autoscroll-icon">
+            <label id="autoscroll-label" for="auto-scroll">Auto</label>
+          </span>
+
+          <span id="fullscreen" class="footer-icon">
+            <img src="/icons/fullscreen.png" id="fullscreen-icon">
+            <label id="fullscreen-label" for="full-screen">Fullscreen</label>
+          </span>
+        </div>
+
+        <!-- @There isn't anything here yet -->
+        <div id="trade-marks">
+            <p>where the trade marks go</p>
+        </div>
+
       </footer>
 
     </main>
