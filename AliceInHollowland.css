@@ -1,4 +1,4 @@
-/* The scroll bar -------------------------------------------------------- */
+/* The scroll bar /////////////////////////////////////////////////////////////////////////*/
 html, body {
     margin: 0; 
     height: 100%; 
@@ -65,7 +65,7 @@ html, body {
     fill: blur(30px);
 }
 
-/* The hero section, the moon ------------------------------------------- */
+/* The hero section, the moon ///////////////////////////////////////////////////////////////*/
 .hero-container{
 
 }
@@ -87,12 +87,29 @@ html, body {
     transform: scale(1.02);
 }
 
+/* Font storage for different stuff */
+
 @font-face {
     font-family: "MoriaCitadel";
     src:
-      local("fonts/moria-citadel"),
-      url("MoriaCitadel.TTF") format("TTF");
-  }
+      url("./fonts/moria-citadel/MoriaCitadel.TTF");
+}
+
+@font-face {
+    font-family: "hvd";
+    src:
+      url("./fonts/hvd-edding-780/hvd_edding.otf");
+}
+
+@font-face {
+    font-family: "casper";
+    src: url(./fonts/casper/Casper.ttf);
+}
+
+@font-face {
+    font-family: "Gingerbread";
+    src: url(fonts/the-gingerbread-house/GingerbreadHouse/Gingerbread\ House.ttf);
+}
 
 /* The h1 title */
 .title-container {
@@ -108,6 +125,8 @@ html, body {
     font-weight: 100;
   }
 
+
+
 #title, h2 {
     opacity: 0%;
     display:flex;
@@ -116,13 +135,22 @@ html, body {
     justify-items: center;
     /* animation: fadeIn 5s; */
 
-    font-size: 5rem;
-    font-family: "MoriaCitadel";
+    font-size: 9rem;
+    font-family: "Gingerbread";
     color: white;
+
+    /* text-transform:uppercase; */
+
+    /* opacity: 100; */
+    font-weight: 100;
+}
+
+h2{
+    font-size: 7rem;
 }
 
 p {
-    
+    font-family: 'hvd';
 }
 
 
@@ -180,7 +208,7 @@ p {
     max-width: 23vw;
   } */
 
-/* The novel texts --------------------------------------------------------*/
+/* The novel texts /////////////////////////////////////////////////////////////////////*/
 #novel-text {
     display:flex;
     flex-direction: column;
@@ -192,7 +220,7 @@ p {
 }
 
 
-/* The panels ------------------------------------------------------------ */
+/* The panels ////////////////////////////////////////////////////////////////////*/
 #panel-container {
     display: grid;
     justify-items: center;
@@ -202,7 +230,7 @@ p {
     grid-column-gap: 1rem;
     grid-row-gap: 3rem;
 
-    margin: 0rem 2rem 3rem 2rem;
+    margin: 0rem 2rem 1rem 2rem;
     padding: 0 0 0 0;
     list-style: none;
     
@@ -214,8 +242,8 @@ p {
 }
 
 #panel-container li:hover{
-    transform: scale(1.5);
-    transition: transform 0.2s;
+    /* transform: scale(1.5);
+    transition: transform 0.2s; */
 }
 
 #prologue-p1 { grid-area: 1 / 1 / 2 / 2; }
@@ -225,7 +253,7 @@ p {
 #prologue-p5 { grid-area: 2 / 2 / 3 / 3; }
 #prologue-p6 { grid-area: 2 / 3 / 3 / 4; }
 
-/* The footer -------------------------------------------------------------------------- */
+/* The footer /////////////////////////////////////////////////////////////////////////////// */
 /* Footer settings----- */
 #footer-settings{
     background: #797676;
@@ -233,9 +261,15 @@ p {
     display: inline-flex;
     gap: 2rem;
     margin: 3rem 3rem 3rem 3rem;
-    padding: 1rem 1rem 1rem 1rem;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 
     font-size: 0.9rem;
+
+    position: fixed;
+    /* bottom: 0; */
+    z-index: 2;
+    /* transition: fadeIn 2s; */
+    /* opacity: 0%; */
 }
 
 .footer-icon {
@@ -260,7 +294,61 @@ p {
     box-shadow: 5px 10px;
 } */
 
-/* Footer tradermarks----- */
+
+/* Footer chapter list ------------------ */
+
+#chapter-list {
+    display: inline-flex;
+
+    background-color: #797676;
+}
+
+
+#chapter-button {
+    position: fixed;
+    top: 1.5rem;
+    right: 0.8rem;
+    z-index: 2;
+
+
+    width: 2rem;
+    background-color: #797676;
+    /* opacity: 0%; */
+}
+
+#chapter-list-content {
+
+    display: inline-flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    list-style: none;
+    padding: 0.5rem 0.5rem 0.5rem 0.5rem;
+
+    position: fixed;
+    top: 4rem;
+    right: 0.8rem;
+    z-index: 2;
+    background-color: #797676;
+
+    opacity: 0%;
+
+    text-align: center;
+}
+
+#chapter-list-content li{
+    transition: transform 0.2s; 
+    
+}
+
+#chapter-list-content li:hover {
+    transition: transform 0.2s;
+    transform: scale(1.3);
+    -webkit-filter: drop-shadow(5px 5px 5px #ffffff);
+}
+
+
+/* Footer tradermarks-------------------- */
 #trade-marks{
     margin: 3rem 3rem 1rem 3rem;
     padding: 0 0 1rem 0rem;
