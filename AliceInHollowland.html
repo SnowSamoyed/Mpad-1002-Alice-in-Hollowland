@@ -11,11 +11,14 @@
     <link rel="stylesheet" href="./reset.css" />
     <link rel="stylesheet" href="./AliceInHollowland.css" />
 
-    <link rel="icon" href="./images/favicon/windows-favicon.png" type="image/svg+xml" />
+    <link rel="icon" href="/icons/alice-eye.webp" type="image/svg+xml" />
   </head>
 
 <!--
 CITATIONS
+ 1.Chapterl list jump: https://stackoverflow.com/questions/2835140/how-do-i-link-to-part-of-a-page-hash
+
+
 -->
 
 <!-- @ represent something to work on next time -->
@@ -34,41 +37,107 @@ CITATIONS
 
     <section id="hero">
       <img src="\images\moon.png" id="moon">
+      <!-- <img src="/icons/alice-eye.webp" id="moon"> -->
       <div class="title-container"><h1 id="title">ALicE iN HollowLanD</h1></div>
     </section>
     <main>
-      <!-- PRPLOGUE -------------------------------------------- -->
+      <!-- PRPLOGUE ------------------------------------------------------>
       <section id="prologue">
-        <h2>PRologuE</h2>
+        <h2 class="chapter-title">PRologuE</h2>
         <div id="video-container">
           <video controls width="250" id="prologue-video">
             <source src="/media/cc0-videos/flower.webm" type="video/webm" />
         </div>
 
-        <div><p id="novel-text">In this div, it will display the novel text</p></div>
+        <section id="novel-text" class="hidden">
+          <p>In the mystical depths of the woods, </p>
+          <p> where majestic trees stood tall and graceful,  their branches reaching skyward, </p>
+          <p>a curious soul named Alice sought refuge from reality,</p>
+          <p>if only for a short while. </p>
+         
+        </section>
 
-        <ul id="panel-container">
-          <li><img src="https://picsum.photos/2500/2250?nocache=<?php echo microtime(); ?>" id="prologue-p1"></li>
+        <ul id="panel-container-1" class="panel-container">
+          <li id="prologue-p1"><img src="/panels/00.01.png" class="panel"></li>
+        </ul>
+        
+      
+        <section id="novel-text" class="hidden">
+          <p> Venturing deeper into the woods, </p> 
+          <p>Alice stumbled upon a clearing, illuminated by an ethereal glow. </p>
+          <p>In its center stood a peculiar mushroom, its allure irresistible. Driven by curiosity,</p>  
+          <p>she took a bite, hoping to satisfy the hunger that had gripped her.</p>
+        </section>
+      
+        
+        
+        <ul id="panel-container-2" class="panel-container">
 
-          <li><img src="https://picsum.photos/2500/2250?nocache=<?php echo microtime(); ?>" id="prologue-p2"></li>
+          <li ><img src="/panels/00.02.png" id="prologue-p2" class="panel"></li>
 
-          <li><img src="https://picsum.photos/2500/2250?nocache=<?php echo microtime(); ?>"  id="prologue-p3"></li>
-
-          <li><img src="https://picsum.photos/2500/2250?nocache=<?php echo microtime(); ?>"  id="prologue-p4"></li>
-
-          <li><img src="https://picsum.photos/2500/2250?nocache=<?php echo microtime(); ?>"  id="prologue-p5"></li>
-
-          <li><img src="https://picsum.photos/2500/2250?nocache=<?php echo microtime(); ?>"  id="prologue-p6"></li>
+          <li><img src="/panels/00.03.png"  id="prologue-p3" class="panel"></li>
 
         </ul>
 
+        <section id="novel-text" class="hidden">
+          <p> For a fleeting instant, Alice basked in the tranquil serenity of her thoughts.</p>
+          <p>Yet, with each passing minute, an unsettling discord began to overshadow her.</p> 
+          <p>Paranoia seeped into her senses, transforming the harmonious forest symphony into a relentless, 
+          ticking clockwork.</p>
+        </section>
+
+        <ul id="panel-container-2" class="panel-container">
+
+          <li><img src="/panels/00.04.png"  id="prologue-p4" class="panel"></li>
+
+          <li><img src="/panels/00.05.png"  id="prologue-p5" class="panel"></li>
+
+          <li></li>
+
+        </ul>
+
+        <section id="novel-text" class="hidden">
+          <p>The air thickened with an unspoken dread, as the trees cast shadows upon the once serene scene.  </p>
+          <p>The once tame sentinels pointing to the heavens, now seemed to fixate on Alice with their hollow gazes and reaching arms.</p>
+          <p>Their elongated shadows encroached upon her, growing larger and darker with each passing moment until they’d encompass everything within Alice’s view. </p> 
+          <p>Panic seized Alice in its relentless grip before everything was overtaken by void, sending Alice into a freefall.</p>
+        </section>
+
+        <img src="/panels/00.06.png"  id="prologue-p6" class="panel">
+
       </section>
 
-      <!-- Chapter 1 -------------------------------------------- -->
-      <section id="chapter-1">
+      <!-- Chapter 1 -------------------------------------------------------------->
+      <section id="chapter-1"></section>
+        <h2 class="chapter-title" id="chapter-1-title">ChapTer 1</h2> <!-- Animation not working, 100% opacity for now -->
+          <div id="video-container">
+            <video controls width="250" id="prologue-video">
+              <source src="/media/cc0-videos/flower.webm" type="video/webm" />
+          </div>
+
+        <section id="novel-text" class="hidden">
+          <p>As Alice plummeted through the void the air around her chilled, and the wind began to whisper. </p>
+
+          <p>Abruptly, she landed in a nightmarish landscape, where twisted, decaying trees with branches that resembled gnarled claws loomed overhead,</p>
+
+          <p>similar to the ones from moments ago, aside from being motionless for the time being.  </p>
+      
+        </section>
+
+        <ul id="panel-container-2" class="panel-container">
+
+          <li><img src="/panels/01.01.png"  id="chapter-1-p1" class="panel"></li>
+
+          <li><img src="/panels/01.02.png"  id="prologue-1-p2" class="panel"></li>
+
+          <li></li>
+
+        </ul>
+        
         
       </section>
 
+      <!-- Chapter 2 -------------------------------------------------------------->
       <section id="chapter-2">
         
       </section>
@@ -115,13 +184,13 @@ CITATIONS
               <img src="/icons/chapter.png">
             </div>
             <ul id="chapter-list-content">
-              <li>P</li>
-              <li>1</li>
-              <li>2</li>
-              <li>3</li>
-              <li>I</li>
-              <li>II</li>
-              <li>III</li>
+              <li><a href="#prologue">P</li>
+              <li><a href="#chapter-1">1</li>
+              <li><a href="#chapter-2">2</li>
+              <li><a href="#chapter-3">3</li>
+              <li><a href="#chapter-4">I</li>
+              <li><a href="#chapter-5">II</li>
+              <li><a href="#chapter-6">III</li>
             </ul>
           </div>
         </div>
