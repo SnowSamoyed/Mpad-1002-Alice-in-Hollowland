@@ -18,6 +18,10 @@
 CITATIONS
  1.Chapterl list jump: https://stackoverflow.com/questions/2835140/how-do-i-link-to-part-of-a-page-hash
 
+ 2. Alice running progress: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range
+ https://www.smashingmagazine.com/2021/12/create-custom-range-input-consistent-browsers/
+
+ 3.Horizontal and Vertical scrolling https://codepen.io/nachitz/pen/RqyrQg
 
 -->
 
@@ -108,7 +112,7 @@ CITATIONS
       </section>
 
       <!-- Chapter 1 -------------------------------------------------------------->
-      <section id="chapter-1"></section>
+      <section id="chapter-1" class="horizontal active"></section>
         <h2 class="chapter-title" id="chapter-1-title">ChapTer 1</h2> <!-- Animation not working, 100% opacity for now -->
           <div id="video-container">
             <video controls width="250" id="prologue-video">
@@ -118,7 +122,9 @@ CITATIONS
         <section id="novel-text" class="hidden">
           <p>As Alice plummeted through the void the air around her chilled, and the wind began to whisper. </p>
 
-          <p>Abruptly, she landed in a nightmarish landscape, where twisted, decaying trees with branches that resembled gnarled claws loomed overhead,</p>
+          <p>Abruptly, she landed in a nightmarish landscape, where twisted,</p>
+
+          <p> decaying trees with branches that resembled gnarled claws loomed overhead,</p>
 
           <p>similar to the ones from moments ago, aside from being motionless for the time being.  </p>
       
@@ -135,27 +141,121 @@ CITATIONS
         </ul>
 
         <section id="novel-text" class="hidden">
-          <p></p>
+          <p>Alice was no longer where she knew, the forest around her was far too thin. </p>
 
-          <p></p>
+          <p>Nevertheless, overwhelming. Now, looking up, she could see the omnipresent orange sky above. </p>
 
-          <p></p>
+          <p>Its heavy, static, and despairing presence made it indistinguishable whether it was dusk or dawn,</p>
+
+          <p>further adding to Alice’s disorientation and demorale.</p>
+
+          <p>The air was thick with an unsettling fog that clung to the shadows like a malevolent spirit on the forest floor, which itself seemed never ending. </p>
+
       
         </section>
 
-        <ul id="panel-container-2" class="panel-container">
+        <section id="novel-text" class="hidden">
+          <p>A faint and quick rattle could be heard in the distance for a brief moment before silencing itself.</p>
+
+          <p>Biting her nails, Alice reluctantly rose from the cold, damp ground. </p>
+
+          <p>Her surroundings cloaked in an unyielding expanse of decay. She’d start to wander through the spanning ocean of rot. In silence; adding to her feeling of paranoia.</p>
+
+        </section>
+
+        <ul id="panel-container" class="panel-container">
+
+          <li><img src="./panels/01.02.png"  id="chapter-1-p5" class="panel"></li>
+
+        </ul>
+
+        <section id="novel-text" class="hidden">
+
+          <p>But though silent, this ocean of rot, much like its aqueous counterpart, concealed a myriad of unseen events beneath its eyeshot surface. </p>
+          <p>Alice, unable to shake off the lingering feeling of being watched, moved cautiously through this nightmarish realm, </p>
+          <p>unsure of what twisted secrets lurked in the shadows or what grotesque specters might rise from the depths of this eerie ocean of decay.</p>
+
+
+        </section>
+
+        <section id="novel-text" class="hidden">
+          <p>The silence pressed upon her like an oppressive force, it was far from an absence of events. </p>
+          <p>It was a deceptive calm. Every step Alice took sent unsettling echoes through the decaying remnants of twisted vegetation,</p>
+          <p> and almost as if in reply, this time echoed back another faint rattle, yet again suppressing itself before long. </p>
+          <p>This time seemingly closer, or perhaps just an effect of Alice’s paranoia.</p>
+          
+        </section>
+
+        <ul id="panel-container" class="panel-container">
 
           <li><img src="./panels/01.05.png"  id="chapter-1-p5" class="panel"></li>
 
-          <li><img src="./panels/01.06.png"  id="prologue-1-p6" class="panel"></li>
-
-          <li></li>
-
         </ul>
-        
-        
+        <section id="novel-text" class="hidden">
+         <p>As time continued to warp around Alice through the forest, the dread in her chest tightened with every step, and the silence now felt like an ominous prelude to an impending terror.</p>
+         <p> Rhythmic with her pacing distant rattles persisted every now and then, each one sending a stronger shiver down her spine. </p>
+         <p>Still unsure if it was the echo of her own fear or a malevolent presence drawing nearer, she quickened her pace, only to be met with another rattle,</p>
+         <p> unmistakably closer this time. Each step Alice took was now accompanied by the haunting percussion of her unseen pursuer. Panic clawing at her mind. </p>
+
+        </section>
+
+        <section id="run-container">
+
+          <div>
+            <input type="range" id="run-progress" name="cowbell" min="0" max="100" value="00" step="10" />
+            <label for="cowbell"></label>
+          </div>          
+      
+          </div>
+          
+          <div id="posX"></div>
+        </section>       
       </section>
 
+      <section class="horizontal"> <!-- Scroll to right before next chapter -->
+        <section id="novel-text" class="hidden">
+          <p>Accompanied by this dread the forest seemed to tighten its grip on Alice restricting her to one direction of travel. 
+          </p>
+          <p>The unseen presence closing in from behind like a relentless nightmare unaffected by the woods. </p>
+          <p>The rattling inched closer, and closer, and closer, gaining on Alice, creating an unnatural tension. </p>
+          <p>She frantically pushed forwards, breathlessly, but the rattles persisted, growing more sinister before finally reaching a climax as Alice stumbled in exhaustion.</p>
+        </section>
+
+        <section id="novel-text" class="hidden">
+          <p>In the eerie stillness of Alice’s fatigue a final rattle cut through the air, right past her placing itself in front of her,</p>
+          <p> plunging Alice into a heart stopping realization that whatever tailed her from the shadows was now poised to reveal itself. </p>
+          <p>A slower, chain-like rattle rang from behind a tree, and then emerged a floating spine led by two deep enormous glowing eyes which began to formulate from nothing right before her. </p>
+
+        </section>
+
+        <section id="novel-text" class="hidden">
+          <p>Finally an elongated grin composed of sinister sharp teeth materialized, and slowly thereafter was the decomposed figure of a feline, </p>
+          <p>devoid of vibrancy and drowned in a sense of lifelessness. This beast took the form of a rotten withering cat. To Alice’s dismay the creature then prompted her,</p>
+        </section>
+
+        <section id="novel-text" class="hidden">
+          <p>“Why the long face Alice…”</p>
+          <p>In a raspy hollow voice.</p>
+          <p> “I’m here to help you..”</p> 
+          <p> “It’s me.”</p>
+          <p>Its mouth’s form, unaltered.</p>           
+        </section>
+
+        <ul id="panel-container" class="panel-container">
+          
+          <li>
+            <img src='./panels/01.06.png' 
+            onmouseover="this.src='./panels/01.06.2.png';" 
+            onmouseout="this.src='./panels/01.06.png';" 
+            id="chapter-1-p6" 
+            class="panel"/>
+          </li>
+
+          <!-- <li><img src="./panels/01.06.png"  id="chapter-1-p6" class="panel"></li> -->
+
+        </ul>
+
+      </section>
       <!-- Chapter 2 -------------------------------------------------------------->
       <section id="chapter-2">
         
@@ -207,9 +307,9 @@ CITATIONS
               <li><a href="#chapter-1">1</a></li>
               <li><a href="#chapter-2">2</a></li>
               <li><a href="#chapter-3">3</a></li>
-              <li><a href="#chapter-4">I</a></li>
-              <li><a href="#chapter-5">II</a></li>
-              <li><a href="#chapter-6">III</a></li>
+              <li><a href="#Ending-1">I</a></li>
+              <li><a href="#Ending-2">II</a></li>
+              <li><a href="#Ending-3">III</a></li>
             </ul>
           </div>
         </div>

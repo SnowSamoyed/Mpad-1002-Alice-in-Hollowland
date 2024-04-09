@@ -61,20 +61,21 @@ heroMoon.addEventListener("click", function (e) {
     heroMoon.style.transition = "all 2s linear";
     
     // heroMoon.style.filter = 'brightness(0%)';
-    title.style.animation = "fadeIn s";
+    title.style.animation = "fadeIn 3s";
     title.style.opacity = "100%";
 
     pageScrollHtml.style.overflow = "visible";
     pageScrollBody.style.overflow = "visible";
 
     settings.style.bottom = "0";
+    settings.style.left = "0";
     settings.style.animation = "fadeIn 3s";
 
     callChapter.style.opacity = 100; 
   
 
-    console.log("my opacity is", callChapter.style.opacity);
-    console.log("my width is", callChapter.style.width);
+    console.log("my opacity is", settings.style.opacity);
+    console.log("my width is", settings.style.width);
     
 });
 
@@ -123,14 +124,14 @@ callChapter.addEventListener("click", function(e){
   // }
 });
 
-// title
+// title ///////////////////////////////////////////////////////////////////
 const checkpoint = 300;
 const chapterTitle = document.querySelectorAll(".chapter-title")
   // for(var x = 0; x < chapterTitle.length; x++){
   //   chapterTitle[x].style.opacity = 1;
   //   chapterTitle[x].style.transition = "all 2s linear";
   // }
-chapterTitle.forEach((el)=> observer.observe(el));
+chapterTitle.forEach((el)=> observer1.observe(el));
 
 window.addEventListener("scroll", () => {
   const currentScroll = window.pageYOffset;
@@ -156,3 +157,58 @@ window.addEventListener("scroll", () => {
 // prologueEnd.addEventListener("scroll", function(e){
 
 // });
+
+
+// Alice run activity ///////////////////////////////////////////////
+
+
+
+
+// Change scroll direction after run ////////////////////////////////
+document.addEventListener('DOMContentLoaded', function(){
+  var scroller = document.getElementById('view-area');
+  var sectionContainer = document.getElementById('section-container');
+  var lastIndex = 0;
+  var indexArray = [
+    {x:0, y:0, horizontal: false},
+    {x:0, y:1, horizontal: true},
+    {x:1, y:1, horizontal: false},
+    {x:0, y:2, horizontal: false}
+  ];
+  var maxRows = 3;
+  var maxCols = 2;
+
+  //https://gist.github.com/gre/1650294
+  var easeInQuad = function (t) { return t*t };
+  var easeInCubic = function (t) { return t*t*t }
+
+  var handleScroll = function (e) {
+    var doc = document.documentElement;
+        var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
+
+        var index = Math.floor(top / window.innerHeight);
+        var percent = 1 / window.innerHeight *  (top - (window.innerHeight * index));
+        var	percentEasing = easeInCubic(percent);
+
+        $('section').removeClass('active');
+        $('section').eq(index).addClass('active');
+        $('section').eq(index+1).addClass('active');
+
+        if (index != lastIndex) {
+          lastIndex = index;
+          sectionContainer.style.transform = 'translate(0,0)';
+          console.log('activate: ', index);
+        }
+
+        if (indexArray[index].horizontal === false) {
+          sectionContainer.style.transform = 'translate(0,-'+( 50 * percentEasing) +'%)';
+        } else {
+      sectionContainer.style.transform = 'translate(-'+( 50 * percentEasing) +'%, 0)';
+        }
+      };
+
+      document.addEventListener('scroll', handleScroll);
+
+      // This is the magic, this gives me "live" scroll events
+      document.addEventListener('gesturechange', handleScroll);
+});

@@ -166,6 +166,7 @@ h2{
 /* Animations for chapter title and text ------------------------ */
 #novel-text {
     font-family: 'hvd';
+    text-align: center;
 }
 
 .hidden {
@@ -340,6 +341,97 @@ transform: rotate(90deg) translateZ(.22px) scale(0.7) translateX(-10vh) translat
 }
 
 
+/* The interactivities /////////////////////////////////////////////////////// */
+
+/* Alice running in Chapter 1 ------------------------------------------- */
+#run-container{
+    margin: 15rem 3rem 1rem 4rem;
+}
+
+#alice-run-act{
+    width: 20%;
+    /* margin: ; */
+}
+
+#run-progress{
+    width: 100%;
+    -webkit-appearance: none;
+    background: transparent;
+    cursor: pointer;
+}
+
+#run-progress::-webkit-slider-runnable-track{
+    background: #053a5f;
+    height: 0.5rem;
+}
+#run-progress::-moz-range-track{
+    background: #053a5f;
+    height: 0.5rem;
+}
+
+#run-progress::-webkit-slider-thumb{
+    -webkit-appearance: none; /* Override default look */
+    background-image: url(/images/run-white.png);
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+
+    margin-top: -16rem; /* Centers thumb on the track */
+    /* background-color: #7cc2ce; */
+
+    height: 18rem;
+    width: 18rem;  
+}
+
+
+/* The page scroll direction change //////////////////////////////////////// */
+.view-area {
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.scroller {
+    background: grey;
+    display: block;
+    width: 100vw;
+    height: 400vh;
+}
+
+.section-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200vw;
+    height: 200vh;
+}
+
+.section-container section {
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: none;
+    width: 100vw;
+    height: 100vh;
+}
+
+.section-container section.active {
+    display: block;
+}
+
+.horizontal {
+    float: left;
+}
+.vertical {
+    clear: both;
+}
+
+
+
 
 /* The footer /////////////////////////////////////////////////////////////////////////////// */
 /* Footer settings----- */
@@ -356,14 +448,16 @@ transform: rotate(90deg) translateZ(.22px) scale(0.7) translateX(-10vh) translat
     font-size: 0.9rem;
 
     position: fixed;
-    /* bottom: 0; */
+
     z-index: 2;
-    /* transition: fadeIn 2s; */
-    /* opacity: 0%; */
+    /* bottom: 0;
+    left: 0; */
+
+    /* opacity: 100%; */
 }
 
 .footer-icon {
-    
+    opacity: 100%;
     display: flex;
     flex-direction: column;
     width: 3rem;
