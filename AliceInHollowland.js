@@ -61,7 +61,7 @@ heroMoon.addEventListener("click", function (e) {
     heroMoon.style.transition = "all 2s linear";
     
     // heroMoon.style.filter = 'brightness(0%)';
-    title.style.animation = "fadeIn 3s";
+    title.style.animation = "fadeIn 7s";
     title.style.opacity = "100%";
 
     pageScrollHtml.style.overflow = "visible";
@@ -158,8 +158,24 @@ window.addEventListener("scroll", () => {
 
 // });
 
+// Chage backround per chapter ///////////////////////////////////////////////////
+
+$(window).scroll(function(){
+  var wScroll = $(this).scrollTop();
+
+if(wScroll >= $('h2').offset().top - ($(window).height() / 1.2 ) ){
+  $("body").css("background-image", "url(./backrounds/chapter-1-back.png)");
+}else{
+  $("body").css("background-color", "white");
+}
+
+});
 
 // Alice run activity ///////////////////////////////////////////////
+
+
+
+
 
 
 
