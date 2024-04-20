@@ -22,6 +22,7 @@ callChapter.style.opacity = 0;
 //   console.log(callChapter)
 // }
 
+// A bunch of observers for the animation of showing up--------------
 const observer1 = new IntersectionObserver((entries)=>{
   entries.forEach((entry) => {
       console.log(entry)
@@ -30,11 +31,11 @@ const observer1 = new IntersectionObserver((entries)=>{
       } else {
           entry.target.classList.remove('showText');
       }
-
   });
 });
-const hiddenText = document.querySelectorAll ('.hidden')
-hiddenText.forEach((el)=> observer1.observe(el));
+
+const flowInText = document.querySelectorAll ('.flowInText')
+flowInText.forEach((el)=> observer1.observe(el));
 
 const observer2 = new IntersectionObserver((entries)=>{
   entries.forEach((entry) => {
@@ -160,18 +161,51 @@ window.addEventListener("scroll", () => {
 
 // Chage backround per chapter ///////////////////////////////////////////////////
 
-$(window).scroll(function(){
-  var wScroll = $(this).scrollTop();
+// $(window).scroll(function(){
+//   var wScroll = $(this).scrollTop();
 
-if(wScroll >= $('h2').offset().top - ($(window).height() / 1.2 ) ){
-  $("body").css("background-image", "url(./backrounds/chapter-1-back.png)");
-}else{
-  $("body").css("background-color", "white");
-}
+// if(wScroll >= $('h2').offset().top - ($(window).height() / 1.2 ) ){
+//   $("body").css("background-image", "url(./backrounds/chapter-1-back.png)");
+// }else{
+//   $("body").css("background-color", "white");
+// }
 
-});
+// });
+
+
+// Display the chapters!
+// let unlockChapter_1 = document.getElementById("click");
+//         toggle.addEventListener("click", show);
+
+//         function show() {
+//             let p = document.getElementsByTagName("p")[0].style.display = "block";
+//         }
+
 
 // Alice run activity ///////////////////////////////////////////////
+
+// const runProgress = document.getElementById("run-progress");
+// let progressValue = runProgress.getAttribute("value");
+const afterRun = document.querySelector("#after-run")
+
+// runProgress.addEventListener("click", show);
+
+const value = document.querySelector("#value");
+const input = document.querySelector("#run-progress");
+value.textContent = input.value;
+input.addEventListener("input", (event) => {
+  value.textContent = event.target.value;
+  console.log(value.textContent);
+  if (value.textContent == "100"){
+    console.log("she's there");
+    afterRun.setAttribute("class", "reveal");
+  }
+});
+
+// function show() {
+//   console.log(progressValue);
+// }
+
 
 
 
@@ -181,50 +215,50 @@ if(wScroll >= $('h2').offset().top - ($(window).height() / 1.2 ) ){
 
 
 // Change scroll direction after run ////////////////////////////////
-document.addEventListener('DOMContentLoaded', function(){
-  var scroller = document.getElementById('view-area');
-  var sectionContainer = document.getElementById('section-container');
-  var lastIndex = 0;
-  var indexArray = [
-    {x:0, y:0, horizontal: false},
-    {x:0, y:1, horizontal: true},
-    {x:1, y:1, horizontal: false},
-    {x:0, y:2, horizontal: false}
-  ];
-  var maxRows = 3;
-  var maxCols = 2;
+// document.addEventListener('DOMContentLoaded', function(){
+//   var scroller = document.getElementById('view-area');
+//   var sectionContainer = document.getElementById('section-container');
+//   var lastIndex = 0;
+//   var indexArray = [
+//     {x:0, y:0, horizontal: false},
+//     {x:0, y:1, horizontal: true},
+//     {x:1, y:1, horizontal: false},
+//     {x:0, y:2, horizontal: false}
+//   ];
+//   var maxRows = 3;
+//   var maxCols = 2;
 
-  //https://gist.github.com/gre/1650294
-  var easeInQuad = function (t) { return t*t };
-  var easeInCubic = function (t) { return t*t*t }
+//   //https://gist.github.com/gre/1650294
+//   var easeInQuad = function (t) { return t*t };
+//   var easeInCubic = function (t) { return t*t*t }
 
-  var handleScroll = function (e) {
-    var doc = document.documentElement;
-        var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
+//   var handleScroll = function (e) {
+//     var doc = document.documentElement;
+//         var top = (window.pageYOffset || doc.scrollTop)  - (doc.clientTop || 0);
 
-        var index = Math.floor(top / window.innerHeight);
-        var percent = 1 / window.innerHeight *  (top - (window.innerHeight * index));
-        var	percentEasing = easeInCubic(percent);
+//         var index = Math.floor(top / window.innerHeight);
+//         var percent = 1 / window.innerHeight *  (top - (window.innerHeight * index));
+//         var	percentEasing = easeInCubic(percent);
 
-        $('section').removeClass('active');
-        $('section').eq(index).addClass('active');
-        $('section').eq(index+1).addClass('active');
+//         $('section').removeClass('active');
+//         $('section').eq(index).addClass('active');
+//         $('section').eq(index+1).addClass('active');
 
-        if (index != lastIndex) {
-          lastIndex = index;
-          sectionContainer.style.transform = 'translate(0,0)';
-          console.log('activate: ', index);
-        }
+//         if (index != lastIndex) {
+//           lastIndex = index;
+//           sectionContainer.style.transform = 'translate(0,0)';
+//           console.log('activate: ', index);
+//         }
 
-        if (indexArray[index].horizontal === false) {
-          sectionContainer.style.transform = 'translate(0,-'+( 50 * percentEasing) +'%)';
-        } else {
-      sectionContainer.style.transform = 'translate(-'+( 50 * percentEasing) +'%, 0)';
-        }
-      };
+//         if (indexArray[index].horizontal === false) {
+//           sectionContainer.style.transform = 'translate(0,-'+( 50 * percentEasing) +'%)';
+//         } else {
+//       sectionContainer.style.transform = 'translate(-'+( 50 * percentEasing) +'%, 0)';
+//         }
+//       };
 
-      document.addEventListener('scroll', handleScroll);
+//       document.addEventListener('scroll', handleScroll);
 
-      // This is the magic, this gives me "live" scroll events
-      document.addEventListener('gesturechange', handleScroll);
-});
+//       // This is the magic, this gives me "live" scroll events
+//       document.addEventListener('gesturechange', handleScroll);
+// });
