@@ -18,7 +18,7 @@ html, body {
 }
 
 ::-webkit-scrollbar{
-    width: 0;
+    width: 1;
 }
 
 #scrollPath{
@@ -161,7 +161,13 @@ h2{
 }
 
 .chapter-title{
+    color: white;
+}
 
+.choice-title{
+    /* font-family: "Gingerbread";
+    font-size: 3rem;
+    color: #fbfaf3; */
 }
 
 #chapter-2{
@@ -275,7 +281,7 @@ h2{
     grid-column-gap: 1rem;
     grid-row-gap: 3rem;
 
-    margin: 0rem 2rem 3rem 2rem;
+    
     padding: 0 0 0 0;
     list-style: none;
     
@@ -293,16 +299,19 @@ h2{
 #panel-container-1 {
     grid-template-columns: repeat(1, 1fr);
     grid-template-rows: repeat(1, 1fr);
+    margin: 0rem 20rem 3rem 20rem;
 }
 
 #panel-container-2 {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(1, 1fr);
+    margin: 0rem 10rem 3rem 10rem;
 }
 
 #panel-container-3 {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(1, 1fr);
+    margin: 0rem 10rem 3rem 10rem;
 }
 
 #panel-container-3 li{
@@ -385,15 +394,103 @@ h2{
     width: 18rem;  
 }
 
-/* Trying to hide some chapter --------------------------------------- */
-.hidden{
-    display: none;
+/* Alice spill act ///////////////////////////////////////////////// */
+#spill-container{
+    margin: 10rem 3rem 1rem 8rem;
+    display: flex;
+    justify-content: center;
 }
 
-.reveal{
+#alice-spill-act{
+    width: 20%;
+    /* margin: ; */
+}
+
+/* Trying to hide chapter /////////////////////////////////////////////////////*/
+.after-run{
+    display: none; 
+    /* @ put it back later */
+}
+
+.after-spill{
+    display: none; 
+    /* @ put it back later */
+}
+
+.endings{
+    display: none; 
+    /* @ put it back later */
+}
+
+#reveal{
     display: block;
 }
 
+.choice-holder{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#choice-img-1{
+    width: 10rem;
+    transition: transform 0.2s;
+    -webkit-filter: drop-shadow(0px 0px 7px rgba(255, 255, 255, 0.5));
+    filter: drop-shadow(0px 0px 7px rgba(255, 255, 255, 0.5));
+}
+
+#choice-img-1:hover {
+    transition: transform 0.2s;
+    transform: scale(1.02);
+    
+    -webkit-filter: drop-shadow(-20px 15px 0px rgba(211, 24, 24, 0.5));
+    filter: drop-shadow(-20px 15px 0px rgba(211, 24, 24, 0.5));
+    /* https://stackoverflow.com/questions/8693733/how-to-give-outer-glow-to-an-object-in-a-transparent-png-using-css3 */
+}
+
+#choice-img-2{
+    width: 15rem;
+    transition: transform 0.2s;
+    -webkit-filter: drop-shadow(0px 0px 7px rgba(255, 255, 255, 0.5));
+    filter: drop-shadow(0px 0px 7px rgba(255, 255, 255, 0.5));
+}
+
+#choice-img-2:hover {
+    transition: transform 0.2s;
+    transform: scale(1.02);
+    -webkit-filter: drop-shadow(20px 10px 0px rgba(211, 24, 24, 0.5));
+    filter: drop-shadow(20px 10px 0px rgba(211, 24, 24, 0.5));
+}
+
+#choice-img-3{
+    width: 15rem;
+    transition: transform 0.2s;
+    -webkit-filter: drop-shadow(0px 0px 7px rgba(255, 255, 255, 0.5));
+    filter: drop-shadow(0px 0px 7px rgba(255, 255, 255, 0.5));
+}
+
+#choice-img-3:hover {
+    transition: transform 0.2s;
+    transform: scale(1.02);
+    
+    -webkit-filter: drop-shadow(-20px 15px 0px rgba(211, 24, 24, 0.5));
+    filter: drop-shadow(-20px 15px 0px rgba(211, 24, 24, 0.5));
+    /* https://stackoverflow.com/questions/8693733/how-to-give-outer-glow-to-an-object-in-a-transparent-png-using-css3 */
+}
+
+#choice-img-4{
+    width: 15rem;
+    transition: transform 0.2s;
+    -webkit-filter: drop-shadow(0px 0px 7px rgba(255, 255, 255, 0.5));
+    filter: drop-shadow(0px 0px 7px rgba(255, 255, 255, 0.5));
+}
+
+#choice-img-4:hover {
+    transition: transform 0.2s;
+    transform: scale(1.02);
+    -webkit-filter: drop-shadow(20px 10px 0px rgba(211, 24, 24, 0.5));
+    filter: drop-shadow(20px 10px 0px rgba(211, 24, 24, 0.5));
+}
 
 /* The page scroll direction change //////////////////////////////////////// */
 .view-area {
@@ -446,6 +543,8 @@ h2{
 .vertical {
     clear: both;
 }
+
+
 
 
 

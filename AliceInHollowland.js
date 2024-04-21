@@ -2,10 +2,9 @@
 let progress = document.getElementById("progressbar");
 let totalHeight = document.body.scrollHeight - window.innerHeight;
 window.onscroll = function(){
-    let progressHeight = (window.pageYOffset / totalHeight) * 100;
-    progress.style.height = progressHeight + "%"
+    let progressHeight = (window.pageYOffset / totalHeight) * 80; /* @Change the 100 at the end for the scroll bar to not go off */
+    progress.style.height = progressHeight + "%";
 }
-
 
 
 // hero page ------------------------------------------------------------
@@ -146,8 +145,6 @@ window.addEventListener("scroll", () => {
   mainTitleBox.style.opacity = 1;
   mainTitleBox.style.height = "10rem";
 
-  
-  
   // console.log("title opacity 100%");
 });
 
@@ -182,13 +179,17 @@ window.addEventListener("scroll", () => {
 //         }
 
 
-// Alice run activity ///////////////////////////////////////////////
+// Alice run activity //////////////////////////////////////////////////////////////////////
 
 // const runProgress = document.getElementById("run-progress");
 // let progressValue = runProgress.getAttribute("value");
-const afterRun = document.querySelector("#after-run")
 
-// runProgress.addEventListener("click", show);
+/* @put it back later */
+const afterRun = document.querySelectorAll(".after-run");
+const chapter2Link = document.querySelector("#chapter-2-link");
+const chapter3Link = document.querySelector("#chapter-3-link");
+
+// runProgress.addEventListener("click", showChapter);
 
 const value = document.querySelector("#value");
 const input = document.querySelector("#run-progress");
@@ -198,13 +199,17 @@ input.addEventListener("input", (event) => {
   console.log(value.textContent);
   if (value.textContent == "100"){
     console.log("she's there");
-    afterRun.setAttribute("class", "reveal");
+    chapter2Link.innerHTML ="2";
+    chapter3Link.innerHTML = "3";
+    for (let i = 0; i < afterRun.length; i++) {
+      afterRun[i].setAttribute("class", "reveal");
+    }
   }
 });
 
-// function show() {
-//   console.log(progressValue);
-// }
+function showChapter() {
+  console.log(progressValue);
+}
 
 
 
@@ -262,3 +267,51 @@ input.addEventListener("input", (event) => {
 //       // This is the magic, this gives me "live" scroll events
 //       document.addEventListener('gesturechange', handleScroll);
 // });
+
+
+// Choice to display Endings //////////////////////////////////////////////////////
+const ending_1 = document.getElementById("ending-1");
+const ending_1_icon = document.getElementById("choice-img-1");
+const ending_1_iconLink = document.querySelector("#ending-1-link");
+const choiceBox_1 = document.querySelector("#choiceBox-1");
+ending_1_icon.addEventListener("click", showEnding1);
+
+function showEnding1() {
+  ending_1_iconLink.innerHTML ="I";
+
+  ending_1.setAttribute("class", "reveal");
+}
+
+// --------------------------------------------------
+const ending_23 = document.getElementById("ending-2/3");
+const ending_23_icon = document.getElementById("choice-img-2");
+const ending_23_iconLink = document.querySelector("#ending-2-link");
+const choiceBox_2 = document.querySelector("#choiceBox-2");
+ending_23_icon.addEventListener("click", showEnding23);
+
+function showEnding23() {
+  ending_23_iconLink.innerHTML ="II";
+  choiceBox_2.setAttribute("class", "reveal");
+  ending_23.setAttribute("class", "reveal");
+}
+
+// --------------------------------------------------
+const ending_2 = document.getElementById("ending-2");
+const ending_2_icon = document.getElementById("choice-img-3");
+// const ending_2_iconLink = document.querySelector("#ending-2-link");
+ending_2_icon.addEventListener("click", showEnding2);
+
+function showEnding2() {
+  ending_2.setAttribute("class", "reveal");
+}
+
+// --------------------------------------------------
+const ending_3 = document.getElementById("ending-3");
+const ending_3_icon = document.getElementById("choice-img-4");
+const ending_3_iconLink = document.querySelector("#ending-3-link");
+ending_3_icon.addEventListener("click", showEnding3);
+
+function showEnding3() {
+  ending_3_iconLink.innerHTML ="III";
+  ending_3.setAttribute("class", "reveal");
+}
