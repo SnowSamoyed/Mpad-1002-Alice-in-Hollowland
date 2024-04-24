@@ -188,12 +188,17 @@ window.addEventListener("scroll", () => {
 const afterRun = document.querySelectorAll(".after-run");
 const chapter2Link = document.querySelector("#chapter-2-link");
 const chapter3Link = document.querySelector("#chapter-3-link");
-
+const runSound = new Audio('./sounds/ch2-running.mp3');
 // runProgress.addEventListener("click", showChapter);
 
 const value = document.querySelector("#value");
 const input = document.querySelector("#run-progress");
 value.textContent = input.value;
+
+input.addEventListener("click", (event) => {
+  runSound.play();
+})
+
 input.addEventListener("input", (event) => {
   value.textContent = event.target.value;
   console.log(value.textContent);
@@ -201,6 +206,7 @@ input.addEventListener("input", (event) => {
     console.log("she's there");
     chapter2Link.innerHTML ="2";
     chapter3Link.innerHTML = "3";
+    // runSound.play();
     for (let i = 0; i < afterRun.length; i++) {
       afterRun[i].setAttribute("class", "reveal");
     }
@@ -212,9 +218,57 @@ function showChapter() {
 }
 
 
+/////Run ends
 
 
+// Tea party activity
 
+const aliceSpill = document.getElementById("alice-spill-act");
+const afterSpill = document.querySelectorAll(".after-spill");
+const spillStregth = document.getElementById("spill-strength");
+const splashSound = new Audio('./sounds/ch2-splash-sound.wav');
+const cupSound = new Audio('./sounds/ch2-cup-break.mp3');
+
+let counter = 0;
+
+
+aliceSpill.addEventListener("click", (event) => {
+  counter = counter + 1;
+  if(counter == 1){
+    spillStregth.innerHTML = "25%";
+  }
+
+  if(counter == 2){
+    spillStregth.innerHTML = "50%";
+  }
+
+  if(counter == 3){
+    spillStregth.innerHTML = "75%";
+  }
+
+
+  if (counter == 4){
+    for (let i = 0; i < afterRun.length; i++) {
+      afterSpill[i].setAttribute("class", "reveal");
+    }
+    spillStregth.innerHTML = "100%";
+    aliceSpill.setAttribute("src", "./images/splash.webp");
+    splashSound.play();
+    cupSound.play();
+    resize();
+    console.log("tea clicked 5 times");
+  }
+});
+
+var flag = true;
+function resize() {
+    if(flag) {
+      aliceSpill.style.width = "40rem";
+    } else {
+      aliceSpill.style.width = "10rem";
+    }
+    (flag)?flag=false:flag=true;
+} 
 
 
 

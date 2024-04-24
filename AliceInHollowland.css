@@ -121,6 +121,62 @@ html, body {
     src: url(fonts/the-gingerbread-house/GingerbreadHouse/Gingerbread\ House.ttf);
 }
 
+@keyframes wobb {
+    0%, 100%   {transform: translateY(0px)}
+    25%  {transform: translateX(-3px)}
+    75%  {transform: translateX(3px)}
+  }
+
+@keyframes wiggle{
+    0% { transform: skewX(9deg); } 
+    10% { transform: skewX(-8deg); } 
+    20% { transform: skewX(7deg); } 
+    30% { transform: skewX(-6deg); } 
+    40% { transform: skewX(5deg); } 
+    50% { transform: skewX(-4deg); } 
+    60% { transform: skewX(3deg); } 
+    70% { transform: skewX(-2deg); } 
+    80% { transform: skewX(1deg); } 
+    90% { transform: skewX(0deg); } 
+    100% { transform: skewX(0deg); } 
+}
+
+/* https://www.w3schools.com/howto/howto_css_glowing_text.asp */
+@-webkit-keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+    }
+    to {
+      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+    }
+  }
+
+
+.chesire-line{
+    animation-name: wobb;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 400ms;
+    display: inline-block;
+    transform: translateY(0px);
+
+
+}
+
+.alice-line{
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+.madHatter-line{
+    animation: wiggle 2s;
+}
+
+.whiteQueen-line{
+
+}
+
 /* The h1 title */
 .title-container {
     margin: 0 0 15rem 0;
@@ -266,7 +322,7 @@ h2{
     font-size: 1.1rem;
     font-weight: lighter;
 
-    margin: 1rem 1rem 3rem 1rem;
+    margin: 0rem 3rem 3rem 3rem;
 }
 
 
@@ -394,26 +450,14 @@ h2{
     width: 18rem;  
 }
 
-/* Alice spill act ///////////////////////////////////////////////// */
-#spill-container{
-    margin: 10rem 3rem 1rem 8rem;
-    display: flex;
-    justify-content: center;
-}
-
-#alice-spill-act{
-    width: 20%;
-    /* margin: ; */
-}
-
 /* Trying to hide chapter /////////////////////////////////////////////////////*/
 .after-run{
-    display: none; 
+    /* display: none;  */
     /* @ put it back later */
 }
 
 .after-spill{
-    display: none; 
+    /* display: none;  */
     /* @ put it back later */
 }
 
@@ -425,6 +469,38 @@ h2{
 #reveal{
     display: block;
 }
+
+/* Alice spill act ///////////////////////////////////////////////// */
+#spill-container{
+    margin: 3rem 3rem 3rem 3rem;
+    display: flex;
+    justify-content: center;
+}
+
+#spill-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+}
+
+#alice-spill-act{
+    width: 14rem;
+    text-align: center;
+    transition: transform 0.2s;
+}
+
+#alice-spill-act:hover{
+    transition: transform 0.2s;
+    transform: scale(1.1);
+}
+
+.spill-text{
+    font-family: "hvd";
+}
+
+/* Choice holder  */
 
 .choice-holder{
     display: flex;
