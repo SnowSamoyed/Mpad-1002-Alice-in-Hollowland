@@ -10,7 +10,7 @@
 html, body {
     margin: 0; 
     height: 100%; 
-    /* overflow: hidden; */
+    overflow: hidden;
     background-color: black;
     color: white;
     /* background-image: url(./backrounds/chapter-1-back.png); */
@@ -452,12 +452,12 @@ h2{
 
 /* Trying to hide chapter /////////////////////////////////////////////////////*/
 .after-run{
-    /* display: none;  */
+    display: none; 
     /* @ put it back later */
 }
 
 .after-spill{
-    /* display: none;  */
+    display: none; 
     /* @ put it back later */
 }
 
