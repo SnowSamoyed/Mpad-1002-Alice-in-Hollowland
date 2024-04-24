@@ -10,7 +10,7 @@
 html, body {
     margin: 0; 
     height: 100%; 
-    overflow: hidden;
+    /* overflow: hidden; */
     background-color: black;
     color: white;
     /* background-image: url(./backrounds/chapter-1-back.png); */
@@ -123,17 +123,17 @@ html, body {
 
 @keyframes wobb {
     0%, 100%   {transform: translateY(0px)}
-    25%  {transform: translateX(-3px)}
-    75%  {transform: translateX(3px)}
+    25%  {transform: translateY(-1px)}
+    75%  {transform: translateX(1px)}
   }
 
 @keyframes wiggle{
-    0% { transform: skewX(9deg); } 
-    10% { transform: skewX(-8deg); } 
-    20% { transform: skewX(7deg); } 
-    30% { transform: skewX(-6deg); } 
-    40% { transform: skewX(5deg); } 
-    50% { transform: skewX(-4deg); } 
+    0% { transform: skewX(3deg); } 
+    10% { transform: skewX(-3deg); } 
+    20% { transform: skewX(3deg); } 
+    30% { transform: skewX(-3deg); } 
+    40% { transform: skewX(3deg); } 
+    50% { transform: skewX(-3deg); } 
     60% { transform: skewX(3deg); } 
     70% { transform: skewX(-2deg); } 
     80% { transform: skewX(1deg); } 
@@ -144,37 +144,45 @@ html, body {
 /* https://www.w3schools.com/howto/howto_css_glowing_text.asp */
 @-webkit-keyframes glow {
     from {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+      text-shadow: 1px 1px 10px #d38d00, 0 0 20px #fff, 0 0 20px #fff
     }
     to {
-      text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+        text-shadow: 1px 1px 10px #ff0505,
     }
   }
 
 
 .chesire-line{
+    color: #f9a2ff;
+    text-shadow: 1px 5px 1px rgb(105, 105, 105), 0 0 3em rgb(255, 246, 246), 0 0 5em rgb(255, 0, 0);
+    /* background-color: #786363;
+    border-radius: 10rem; */
+}
+
+.alice-line{
+    /* -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate; */
+
+    text-shadow: 1px 5px 1px rgb(0, 26, 255), 0 0 1em rgb(4, 161, 240), 0 0 0.6em rgb(255, 255, 255);
+}
+
+.madHatter-line{
+    color: #ff0101;
+    text-shadow: 1px 4px 1px rgb(49, 85, 130), 0 0 5em rgb(255, 221, 221), 0 0 5em rgb(255, 255, 255);
+}
+
+.whiteQueen-line{
+    text-shadow: 1px 5px 1px rgb(255, 0, 0), 0 0 1em rgb(240, 4, 4), 0 0 0.6em rgb(255, 255, 255);
+}
+
+#angry-line{
     animation-name: wobb;
     animation-iteration-count: infinite;
     animation-timing-function: linear;
     animation-duration: 400ms;
     display: inline-block;
     transform: translateY(0px);
-
-
-}
-
-.alice-line{
-    -webkit-animation: glow 1s ease-in-out infinite alternate;
-    -moz-animation: glow 1s ease-in-out infinite alternate;
-    animation: glow 1s ease-in-out infinite alternate;
-}
-
-.madHatter-line{
-    animation: wiggle 2s;
-}
-
-.whiteQueen-line{
-
 }
 
 /* The h1 title */
@@ -322,7 +330,7 @@ h2{
     font-size: 1.1rem;
     font-weight: lighter;
 
-    margin: 0rem 3rem 3rem 3rem;
+    margin: 0rem 10rem 3rem 10rem;
 }
 
 
@@ -437,7 +445,7 @@ h2{
 
 #run-progress::-webkit-slider-thumb{
     -webkit-appearance: none; /* Override default look */
-    background-image: url(/images/run-white.png);
+    background-image: url(./images/run-white.png);
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
@@ -452,17 +460,17 @@ h2{
 
 /* Trying to hide chapter /////////////////////////////////////////////////////*/
 .after-run{
-    display: none; 
+    /* display: none;  */
     /* @ put it back later */
 }
 
 .after-spill{
-    display: none; 
+    /* display: none;  */
     /* @ put it back later */
 }
 
 .endings{
-    display: none; 
+    /* display: none;  */
     /* @ put it back later */
 }
 
