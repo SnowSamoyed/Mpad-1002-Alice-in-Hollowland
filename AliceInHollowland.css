@@ -10,19 +10,15 @@
 html, body {
     margin: 0; 
     height: 100%; 
-    overflow: auto;
+    /* overflow: horizontal; */ /* Only toggle it on when testing */
     background-color: black;
     color: white;
     /* background-image: url(./backrounds/chapter-1-back.png); */
     /* background-image: ; */
 }
 
-.auto-scroll{
-    overflow: auto;
-}
-
 ::-webkit-scrollbar{
-    width: 1;
+    width: 0.5;
 }
 
 #scrollPath{
@@ -43,6 +39,17 @@ html, body {
     background: linear-gradient(to bottom, #ff000000,#931414);
     /* animation: animate 5s linear; */
 }
+
+/* Dashed border */
+hr.dashed {
+    border-top: 1px dashed;
+    border-bottom: 1px dashed;
+    margin: 0 3rem 3rem 3rem;
+  }
+  /* Dotted border */
+  hr.dotted {
+    border-top: 3px dotted #bbb;
+  }
 
 @keyframes animate{
     0%,100%{
@@ -148,15 +155,15 @@ html, body {
 /* https://www.w3schools.com/howto/howto_css_glowing_text.asp */
 @-webkit-keyframes glow {
     from {
-      text-shadow: 1px 1px 10px #d38d00, 0 0 20px #fff, 0 0 20px #fff
+      text-shadow: 1px 1px 10px #ec34e3, 0 0 20px #fff, 0 0 20px #fff
     }
     to {
-        text-shadow: 1px 1px 10px #ff0505,
+        text-shadow: 1px 1px 10px #e4cdcd,
     }
   }
 
 
-.chesire-line{
+.cheshire-line{
     color: #f9a2ff;
     text-shadow: 1px 5px 1px rgb(105, 105, 105), 0 0 3em rgb(255, 246, 246), 0 0 5em rgb(255, 0, 0);
     /* background-color: #786363;
@@ -177,7 +184,7 @@ html, body {
 }
 
 .whiteQueen-line{
-    text-shadow: 1px 5px 1px rgb(111, 104, 156), 0 0 1em rgb(95, 89, 134), 0 0 0.6em rgb(255, 255, 255);
+    text-shadow: 1px 5px 1px rgb(175, 28, 89), 0 0 1em rgb(95, 89, 134), 0 0 0.6em rgb(255, 255, 255);
 }
 
 #angry-line{
@@ -187,6 +194,12 @@ html, body {
     animation-duration: 400ms;
     display: inline-block;
     transform: translateY(0px);
+}
+
+#glowing-line{
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
 }
 
 /* The h1 title */
@@ -335,6 +348,34 @@ h2{
     font-weight: lighter;
 
     margin: 0rem 10rem 3rem 10rem;
+}
+
+#ending-text{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+    justify-items: center;
+    gap: 1rem;
+    color: white;
+    font-size: 0.8rem;
+    font-weight: lighter;
+
+    margin: 0rem 10rem 0rem 10rem;
+
+    font-family: monospace;
+    text-align: center;
+}
+
+#ending-text a{
+    color: #0b5ce8;
+}
+
+#ending-text a:hover{
+    color: #f8f3f8;
+}
+
+#ending-text a:visited  {
+    color: #d9aedc;
 }
 
 
@@ -518,6 +559,7 @@ h2{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    margin: 3rem 0 3rem 0;
 }
 
 #choice-img-1{
@@ -631,10 +673,6 @@ h2{
 .vertical {
     clear: both;
 }
-
-
-
-
 
 
 /* The footer /////////////////////////////////////////////////////////////////////////////// */

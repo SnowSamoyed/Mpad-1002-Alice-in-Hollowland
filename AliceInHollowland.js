@@ -1,3 +1,6 @@
+
+
+
 //Scrollbar -----------------------------------------------------------------------
 let progress = document.getElementById("progressbar");
 let totalHeight = document.body.scrollHeight - window.innerHeight;
@@ -51,6 +54,7 @@ const hiddenTitle = document.querySelectorAll ('.chapter-title')
 hiddenTitle.forEach((el)=> observer2.observe(el));
 const hiddenPanel = document.querySelectorAll ('.panel')
 hiddenPanel.forEach((el)=> observer2.observe(el));
+
 
 heroMoon.addEventListener("click", function (e) {
     heroMoon.style.transform = 'scale(0.8)';
@@ -113,15 +117,6 @@ callChapter.addEventListener("click", function(e){
 
         console.log("close");
     }
-
-  // if (chapterList.style.opacity == 0){
-  //   chapterList.style.animation = "fadeIn 1s";
-  //   console.log("open");
-  // }
-  // else if (chapterList.style.opacity == 100){
-  //   chapterList.style.opacity = "0%";
-  //   console.log("close");
-  // }
 });
 
 // title ///////////////////////////////////////////////////////////////////
@@ -328,12 +323,16 @@ const ending_1 = document.getElementById("ending-1");
 const ending_1_icon = document.getElementById("choice-img-1");
 const ending_1_iconLink = document.querySelector("#ending-1-link");
 const choiceBox_1 = document.querySelector("#choiceBox-1");
-ending_1_icon.addEventListener("click", showEnding1);
+ending_1_icon.addEventListener("click", toggleEnding1);
 
-function showEnding1() {
-  ending_1_iconLink.innerHTML ="I";
-
-  ending_1.setAttribute("class", "reveal");
+function toggleEnding1() {
+  if (ending_1.classList.contains("reveal")) {
+    ending_1_iconLink.innerHTML ="?";
+    ending_1.setAttribute("class", "endings");  
+  } else if(ending_1.classList.contains("endings")) {
+    ending_1_iconLink.innerHTML ="I";
+    ending_1.setAttribute("class", "reveal"); 
+  }
 }
 
 // --------------------------------------------------
@@ -341,22 +340,30 @@ const ending_23 = document.getElementById("ending-2/3");
 const ending_23_icon = document.getElementById("choice-img-2");
 const ending_23_iconLink = document.querySelector("#ending-2-link");
 const choiceBox_2 = document.querySelector("#choiceBox-2");
-ending_23_icon.addEventListener("click", showEnding23);
+ending_23_icon.addEventListener("click", toggleEnding2);
 
-function showEnding23() {
-  ending_23_iconLink.innerHTML ="II";
-  choiceBox_2.setAttribute("class", "reveal");
-  ending_23.setAttribute("class", "reveal");
+function toggleEnding2() {
+  if (ending_23.classList.contains("reveal")) {
+    ending_23.setAttribute("class", "endings");  
+  } else if(ending_23.classList.contains("endings")) {
+    ending_23.setAttribute("class", "reveal"); 
+  }
 }
 
 // --------------------------------------------------
 const ending_2 = document.getElementById("ending-2");
 const ending_2_icon = document.getElementById("choice-img-3");
-// const ending_2_iconLink = document.querySelector("#ending-2-link");
-ending_2_icon.addEventListener("click", showEnding2);
+const ending_2_iconLink = document.querySelector("#ending-2-link");
+ending_2_icon.addEventListener("click", toggleEnding2);
 
-function showEnding2() {
-  ending_2.setAttribute("class", "reveal");
+function toggleEnding2() {
+  if (ending_2.classList.contains("reveal")) {
+    ending_2_iconLink.innerHTML ="?";
+    ending_2.setAttribute("class", "endings");  
+  } else if(ending_2.classList.contains("endings")) {
+    ending_2_iconLink.innerHTML ="II";
+    ending_2.setAttribute("class", "reveal"); 
+  }
 }
 
 // --------------------------------------------------
@@ -406,7 +413,7 @@ function showEnding3() {
 
 
 // Autoscroll --------------------------------------------------------
-
+// @put it back later!
 let autoScrollInterval;
 let isScrolling = false; // Define isScrolling as a global variable
 let isDebouncing = false;
@@ -445,7 +452,6 @@ document.getElementById('autoscroll-icon').addEventListener('click', function() 
 });
 
 
-
 // fullscreen ////////////////////////////////////////////////////////
 const fullscreenButton = document.getElementById("fullscreen-icon");
 let isFullscreen = false;
@@ -475,3 +481,4 @@ function toggleFullscreen() {
     fullscreenButton.setAttribute("src", "./icons/fullscreen.png")
   }
 }
+
