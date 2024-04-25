@@ -432,13 +432,13 @@ document.getElementById('autoscroll-icon').addEventListener('click', function() 
     stopAutoScroll();
     // this.textContent = 'Start Auto-Scroll';
     // this.innerHTML = '<img src="./icons/autoscroll-dash.png" alt="Start Auto-Scroll">';
-    this.setAttribute("src", "./icons/autoscroll-dash.png")
+    this.setAttribute("src", "./icons/AutoScroll_Act.png")
     console.log("stop");
   } else {
     startAutoScroll();
     // this.textContent = 'Stop Auto-Scroll';
     // this.setAttribute = '<img src="./icons/autoscroll.png" alt="Stop Auto-Scroll">';
-    this.setAttribute("src", "./icons/autoscroll.png")
+    this.setAttribute("src", "./icons/ManualScrolling.png")
     console.log("scroll");
   }
   isScrolling = !isScrolling; // Toggle the state
