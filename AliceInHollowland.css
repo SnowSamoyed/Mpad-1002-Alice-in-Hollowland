@@ -10,11 +10,15 @@
 html, body {
     margin: 0; 
     height: 100%; 
-    /* overflow: hidden; */
+    overflow: auto;
     background-color: black;
     color: white;
     /* background-image: url(./backrounds/chapter-1-back.png); */
     /* background-image: ; */
+}
+
+.auto-scroll{
+    overflow: auto;
 }
 
 ::-webkit-scrollbar{
@@ -674,6 +678,8 @@ h2{
     -webkit-filter: drop-shadow(5px 5px 5px #e5dddd);
     /* filter: drop-shadow(5px 5px 5px #222); */
 }
+
+
 
 /* .footer-icon:hover {
     box-shadow: 5px 10px;

@@ -8,20 +8,20 @@ window.onscroll = function(){
 
 
 // hero page ------------------------------------------------------------
-let heroMoon = document.getElementById("moon");
-let title = document.getElementById("title");
-let pageScrollHtml = document.querySelector("html");
-let pageScrollBody = document.querySelector("body");
+const heroMoon = document.getElementById("moon");
+const title = document.getElementById("title");
+const pageScrollHtml = document.querySelector("html");
+const pageScrollBody = document.querySelector("body");
 
 //ui that always stay on the page
-let settings = document.getElementById("footer-settings");
-let callChapter = document.getElementById("chapter-button");
+const settings = document.getElementById("footer-settings");
+const callChapter = document.getElementById("chapter-button");
 callChapter.style.opacity = 0; 
 // if (callChapter == null){
 //   console.log(callChapter)
 // }
 
-// A bunch of observers for the animation of showing up--------------
+// A bunch of observers for the animation of showing up----------------
 const observer1 = new IntersectionObserver((entries)=>{
   entries.forEach((entry) => {
       console.log(entry)
@@ -68,7 +68,7 @@ heroMoon.addEventListener("click", function (e) {
     pageScrollBody.style.overflow = "visible";
 
     settings.style.bottom = "0";
-    settings.style.left = "0";
+    settings.style.right = "0";
     settings.style.animation = "fadeIn 3s";
 
     callChapter.style.opacity = 100; 
@@ -368,4 +368,110 @@ ending_3_icon.addEventListener("click", showEnding3);
 function showEnding3() {
   ending_3_iconLink.innerHTML ="III";
   ending_3.setAttribute("class", "reveal");
+}
+
+
+// settings /////////////////////////////////////////////////////////////
+// sound -----------------------------------------------------------
+// const soundIcon = document.getElementById("sound-icon");
+// let isSound = true;
+
+// function stopSound(){
+//   window.MutationRecord;
+// }
+
+// function enbleSound(){
+
+// }
+
+// soundIcon.addEventListener('click', function() {
+//   if (isSound) {
+//     stopSound();
+//     // this.textContent = 'Start Auto-Scroll';
+//     // this.innerHTML = '<img src="./icons/autoscroll-dash.png" alt="Start Auto-Scroll">';
+//     this.setAttribute("src", "./icons/sound-dash.png")
+//     console.log("stopSound");
+//   } else {
+//     enbleSound();
+//     // this.textContent = 'Stop Auto-Scroll';
+//     // this.setAttribute = '<img src="./icons/autoscroll.png" alt="Stop Auto-Scroll">';
+//     this.setAttribute("src", "./icons/sound.png")
+//     console.log("sound");
+//   }
+//   isSound = !isSound; // Toggle the state
+// });
+
+
+
+
+
+// Autoscroll --------------------------------------------------------
+
+let autoScrollInterval;
+let isScrolling = false; // Define isScrolling as a global variable
+let isDebouncing = false;
+
+function startAutoScroll() {
+  autoScrollInterval = setInterval(() => {
+    if (!isDebouncing) {
+      isDebouncing = true;
+      window.scrollBy(0, 1); // Adjust scroll speed
+      setTimeout(() => {
+        isDebouncing = false;
+      }, 30); // Adjust debounce time as needed
+    }
+  }, 1); // Adjust interval for desired scroll speed
+}
+
+function stopAutoScroll() {
+  clearInterval(autoScrollInterval);
+}
+
+document.getElementById('autoscroll-icon').addEventListener('click', function() {
+  if (isScrolling) {
+    stopAutoScroll();
+    // this.textContent = 'Start Auto-Scroll';
+    // this.innerHTML = '<img src="./icons/autoscroll-dash.png" alt="Start Auto-Scroll">';
+    this.setAttribute("src", "./icons/autoscroll-dash.png")
+    console.log("stop");
+  } else {
+    startAutoScroll();
+    // this.textContent = 'Stop Auto-Scroll';
+    // this.setAttribute = '<img src="./icons/autoscroll.png" alt="Stop Auto-Scroll">';
+    this.setAttribute("src", "./icons/autoscroll.png")
+    console.log("scroll");
+  }
+  isScrolling = !isScrolling; // Toggle the state
+});
+
+
+
+// fullscreen ////////////////////////////////////////////////////////
+const fullscreenButton = document.getElementById("fullscreen-icon");
+let isFullscreen = false;
+
+fullscreenButton.addEventListener("click", toggleFullscreen);
+
+function toggleFullscreen() {
+  if (!isFullscreen) {
+    if (document.documentElement.requestFullscreen) {
+      document.documentElement.requestFullscreen();
+    } else if (document.documentElement.webkitRequestFullscreen) { /* Safari */
+      document.documentElement.webkitRequestFullscreen();
+    } else if (document.documentElement.msRequestFullscreen) { /* IE11 */
+      document.documentElement.msRequestFullscreen();
+    }
+    isFullscreen = true;
+    fullscreenButton.setAttribute("src", "./icons/fullscreen-dash.png")
+  } else {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) { /* Safari */
+      document.webkitExitFullscreen();
+    } else if (document.msExitFullscreen) { /* IE11 */
+      document.msExitFullscreen();
+    }
+    isFullscreen = false;
+    fullscreenButton.setAttribute("src", "./icons/fullscreen.png")
+  }
 }
