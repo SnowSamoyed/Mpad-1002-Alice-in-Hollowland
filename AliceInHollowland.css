@@ -10,15 +10,20 @@
 html, body {
     margin: 0; 
     height: 100%; 
+    overflow: hidden;
     /* overflow: horizontal; */ /* Only toggle it on when testing */
     background-color: black;
     color: white;
-    /* background-image: url(./backrounds/chapter-1-back.png); */
-    /* background-image: ; */
+}
+
+video {
+    box-shadow: 0px 0px 10px;
 }
 
 ::-webkit-scrollbar{
-    width: 0.5;
+    /* @ put it back later!! */
+    width: 0;
+    scrollbar-width: 0;
 }
 
 #scrollPath{
@@ -505,17 +510,17 @@ h2{
 
 /* Trying to hide chapter /////////////////////////////////////////////////////*/
 .after-run{
-    /* display: none;  */
+    display: none; 
     /* @ put it back later */
 }
 
 .after-spill{
-    /* display: none;  */
+    display: none; 
     /* @ put it back later */
 }
 
 .endings{
-    /* display: none;  */
+    display: none; 
     /* @ put it back later */
 }
 
@@ -692,8 +697,10 @@ h2{
     position: fixed;
 
     z-index: 2;
+    /* @ comment it later! */
+
     /* bottom: 0;
-    left: 0; */
+    right: 0; */
 
     /* opacity: 100%; */
 }
@@ -800,6 +807,21 @@ h2{
 
 /* Footer tradermarks-------------------- */
 #trade-marks{
-    margin: 3rem 3rem 1rem 3rem;
+    margin: 0rem 4rem 1rem 4rem;
     padding: 0 0 1rem 0rem;
+
+    display: flex;
+    flex-direction: row;
+    justify-items: center;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+
+    gap: 10rem;
+
+    font-family: "hvd";
+}
+
+#trade-marks img{
+    width: 4rem;
 }
