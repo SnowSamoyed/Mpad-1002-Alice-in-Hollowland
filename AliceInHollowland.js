@@ -77,7 +77,6 @@ heroMoon.addEventListener("click", function (e) {
 
     callChapter.style.opacity = 100; 
   
-
     console.log("my opacity is", settings.style.opacity);
     console.log("my width is", settings.style.width);
     
@@ -340,13 +339,15 @@ const ending_23 = document.getElementById("ending-2/3");
 const ending_23_icon = document.getElementById("choice-img-2");
 const ending_23_iconLink = document.querySelector("#ending-2-link");
 const choiceBox_2 = document.querySelector("#choiceBox-2");
-ending_23_icon.addEventListener("click", toggleEnding2);
+ending_23_icon.addEventListener("click", toggleEnding23);
 
-function toggleEnding2() {
+function toggleEnding23() {
   if (ending_23.classList.contains("reveal")) {
     ending_23.setAttribute("class", "endings");  
+    choiceBox_2.setAttribute("class", "endings");
   } else if(ending_23.classList.contains("endings")) {
     ending_23.setAttribute("class", "reveal"); 
+    choiceBox_2.setAttribute("class", "reveal");
   }
 }
 
@@ -370,11 +371,16 @@ function toggleEnding2() {
 const ending_3 = document.getElementById("ending-3");
 const ending_3_icon = document.getElementById("choice-img-4");
 const ending_3_iconLink = document.querySelector("#ending-3-link");
-ending_3_icon.addEventListener("click", showEnding3);
+ending_3_icon.addEventListener("click", toggleEnding3);
 
-function showEnding3() {
-  ending_3_iconLink.innerHTML ="III";
-  ending_3.setAttribute("class", "reveal");
+function toggleEnding3() {
+  if (ending_3.classList.contains("reveal")) {
+    ending_3_iconLink.innerHTML ="?";
+    ending_3.setAttribute("class", "endings");  
+  } else if(ending_3.classList.contains("endings")) {
+    ending_3_iconLink.innerHTML ="II";
+    ending_3.setAttribute("class", "reveal"); 
+  }
 }
 
 
@@ -422,12 +428,12 @@ function startAutoScroll() {
   autoScrollInterval = setInterval(() => {
     if (!isDebouncing) {
       isDebouncing = true;
-      window.scrollBy(0, 2.5); // Adjust scroll speed
+      window.scrollBy(0, 1); // Adjust scroll speed
       setTimeout(() => {
         isDebouncing = false;
-      }, 30); // Adjust debounce time as needed
+      }, 10); // Adjust debounce time as needed
     }
-  }, 1); // Adjust interval for desired scroll speed
+  }, 10); // Adjust interval for desired scroll speed
 }
 
 function stopAutoScroll() {
