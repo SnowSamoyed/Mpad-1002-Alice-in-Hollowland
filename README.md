@@ -11,7 +11,6 @@ Front-End development by Maxine Zeng
 
 OPEN GitHub Pages link: https://snowsamoyed.github.io/Mpad-1002-Alice-in-Hollowland/
 
-~~~
 
 Hello! Thank you for taking the time to engage with our interactive story website. Here are a couple of things to note before you get started.
 
