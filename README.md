@@ -3,11 +3,11 @@ A visual novel project for MPAD1002, Carleton University.
 Submitted April 25, 2024.
 
 Credits:
-Story by Fedja Osmanovic
-Art by Ianna Lemesheff
-Cutscenes by Mark Talbot
-Graphic Design by Demian Gonzalez
-Front-End development by Maxine Zeng
+Story by Fedja Osmanovic,
+Art by Ianna Lemesheff,
+Cutscenes by Mark Talbot,
+Graphic Design by Demian Gonzalez,
+Front-End development by Maxine Zeng.
 
 OPEN GitHub Pages link: https://snowsamoyed.github.io/Mpad-1002-Alice-in-Hollowland/
 
