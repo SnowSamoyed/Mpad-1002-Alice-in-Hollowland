@@ -199,7 +199,6 @@ input.addEventListener("input", (event) => {
   if (value.textContent == "100"){
     console.log("she's there");
     chapter2Link.innerHTML ="2";
-    chapter3Link.innerHTML = "3";
     // runSound.play();
     for (let i = 0; i < afterRun.length; i++) {
       afterRun[i].setAttribute("class", "reveal");
@@ -249,6 +248,7 @@ aliceSpill.addEventListener("click", (event) => {
     aliceSpill.setAttribute("src", "./images/splash.webp");
     splashSound.play();
     cupSound.play();
+    chapter3Link.innerHTML = "3";
     resize();
     console.log("tea clicked 5 times");
   }
@@ -378,7 +378,7 @@ function toggleEnding3() {
     ending_3_iconLink.innerHTML ="?";
     ending_3.setAttribute("class", "endings");  
   } else if(ending_3.classList.contains("endings")) {
-    ending_3_iconLink.innerHTML ="II";
+    ending_3_iconLink.innerHTML ="III";
     ending_3.setAttribute("class", "reveal"); 
   }
 }
