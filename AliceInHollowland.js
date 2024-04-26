@@ -422,7 +422,7 @@ function startAutoScroll() {
   autoScrollInterval = setInterval(() => {
     if (!isDebouncing) {
       isDebouncing = true;
-      window.scrollBy(0, 1); // Adjust scroll speed
+      window.scrollBy(0, 2.5); // Adjust scroll speed
       setTimeout(() => {
         isDebouncing = false;
       }, 30); // Adjust debounce time as needed
