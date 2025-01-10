@@ -1,0 +1,113 @@
+@media (max-width:1100px) {
+    body {
+        width: 100vw;
+        font-size: 1em;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow-y: hidden;
+
+    }
+
+    main{
+        width: 100vw;
+    }
+    
+    .title-container{
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+    }
+
+    #title{
+        width: 80vw;
+        font-size: 1em;
+    }
+
+    .chapter-title{
+        font-size: 5em;
+    }
+
+    h1{
+        font-size: 1em;
+    }
+    
+    p {
+        font-size: 0.5em;
+    }
+
+    .flowInText, .showText, #novel-text{
+        width: 90vw;
+        justify-self: center;
+        margin: 0;
+    }
+
+    #ending-text{
+        width: 90vw;
+        justify-self: center;
+        margin: 1rem 1rem;
+        gap: 0;
+
+        font-size: 0.5em;
+    }
+
+    #choicBox-1, #choicBox-2, #choicBox-3 {
+        width: 100vw;
+    }
+
+    #choice-img-1, #choice-img-2, #choice-img-3, #choice-img-4 {
+        width: 30vw;
+    }
+
+
+    .panel-container{
+        width: 100vw;
+        justify-self: center;
+    }
+
+    .panel{
+        width: 100vw;
+        justify-self: center;
+    }
+
+    #trade-marks {
+        max-width: 100vw;
+        width: 100vw;
+        justify-self: center;
+        gap:0;
+    }
+    
+    #video-container{
+        width: 100vw;
+        justify-self: center;
+    }
+
+    #run-container{
+        margin: 10rem 3rem 1rem 4rem;
+
+    }
+
+    #run-progress::-webkit-slider-thumb {
+        height: 8rem;
+        width: 10rem;
+        margin-top: -7rem; /* Adjust offset for smaller size */
+    }
+
+
+    /* User interface  */
+
+    #footer-settings{
+        gap: 0.5rem;
+        margin: 1rem;
+        padding: 0.2rem;
+    
+        font-size: 0.9rem;
+
+    }
+
+    .footer-icon {
+
+    }
+}

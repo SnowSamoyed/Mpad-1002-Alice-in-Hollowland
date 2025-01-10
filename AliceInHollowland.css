@@ -689,14 +689,14 @@ h2{
 
     display: inline-flex;
     gap: 2rem;
-    margin: 3rem 3rem 3rem 3rem;
+    margin: 1rem;
     padding: 0.5rem 0.5rem 0.5rem 0.5rem;
 
     font-size: 0.9rem;
 
     position: fixed;
 
-    z-index: 2;
+    /* z-index: 1; */
     /* @ comment it later! */
 
     /* bottom: 0;
@@ -825,3 +825,4 @@ h2{
 #trade-marks img{
     width: 4rem;
 }
+
