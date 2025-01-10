@@ -71,6 +71,7 @@ heroMoon.addEventListener("click", function (e) {
     pageScrollHtml.style.overflow = "visible";
     pageScrollBody.style.overflow = "visible";
 
+    settings.style.position = "fixed";
     settings.style.bottom = "0";
     settings.style.right = "0";
     settings.style.animation = "fadeIn 3s";
